@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20170203185951) do
 
   create_table "spots", force: :cascade do |t|
     t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "picture"
     t.integer  "price"
     t.boolean  "availability"
