@@ -28,11 +28,11 @@ ActiveRecord::Schema.define(version: 20170203185951) do
     t.string   "address"
     t.string   "picture"
     t.integer  "price"
-    t.boolean  "availability"
+    t.boolean  "availability", default: false
     t.time     "end_time"
     t.integer  "owner_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "users", force: :cascade do |t|

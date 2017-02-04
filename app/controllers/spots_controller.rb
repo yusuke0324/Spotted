@@ -5,7 +5,7 @@ class SpotsController < ApplicationController
 
     # TODO: Replace placeholder user with current user
     @spot.owner = User.first
-    
+
     if @spot.save
       redirect_to root_path
     else
