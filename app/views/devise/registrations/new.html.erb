@@ -59,16 +59,19 @@
     <%= devise_error_messages! %>
         <h2 class="text-center"><strong>Create</strong> an account.</h2>
         <div class="form-group">
-          <%= f.text_field :first_name, autofocus: true, class:"form-control" %>
+          <%= f.text_field :first_name, autofocus: true, class:"form-control", placeholder: "First Name" %>
         </div>
         <div class="form-group">
-            <%= f.text_field :last_name, autofocus: true, class:"form-control" %>
+            <%= f.text_field :last_name, autofocus: true, class:"form-control",placeholder: "Last Name" %>
         </div>
         <div class="form-group">
-            <%= f.text_field :email, autofocus: true, class:"form-control" %>
+            <%= f.text_field :username, autofocus: true, class:"form-control", placeholder: "User name" %>
         </div>
         <div class="form-group">
-            <%= f.text_field :phone, autofocus: true, class:"form-control" %>
+            <%= f.text_field :email, autofocus: true, class:"form-control", placeholder: "Email" %>
+        </div>
+        <div class="form-group">
+            <%= f.text_field :phone, autofocus: true, class:"form-control", placeholder: "Phone number" %>
         </div>
         <div class="form-group">
             <% if @minimum_password_length %>
