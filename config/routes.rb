@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :session
   resources :spots
   resources :reservations
+  resources :users
   get 'welcome/index'
 
   root 'welcome#index'
