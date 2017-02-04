@@ -1,2 +1,17 @@
-<h3>Rent a spot</h3>
-<div id="map"></div>
+<h3>Rent <i>out</i> a spot</h3>
+
+<input type="checkbox" value="1" checked>
+
+<% @spots.each do |spot| %>
+
+  <input type="checkbox" value="1" checked>
+
+  <% if spot.reservations == nil %>
+    <input type="checkbox" name="my-checkbox" checked>
+  <% else %>
+    <input type="checkbox" name="my-checkbox" checked>
+
+  <% end %>
+<% end %>
+
+
