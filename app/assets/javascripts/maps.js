@@ -2,6 +2,7 @@ $(document).ready(function() {
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
   var marker = new google.maps.Marker(markerOptions);
 	marker.setMap(map);
+	console.log("#{@user}")
 });
 
 var mapOptions = {
