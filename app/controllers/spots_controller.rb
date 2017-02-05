@@ -18,7 +18,13 @@ class SpotsController < ApplicationController
   end
 
   def update
+    @spot = Spot.find(params[:id])
+    
+    if request.xhr?
+      render :edit 
+    end
   end
+
 
 private
 

@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   resources :spots
   resources :reservations
-  resources :users
+  resources :users do
+  	resources :spots
+  end
   get 'welcome/index'
 
   root 'welcome#index'

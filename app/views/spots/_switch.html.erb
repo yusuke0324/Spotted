@@ -1,21 +1,66 @@
 <h5>My Spots</h5>
 
-<% @spots.each do |spot| %>
-
 <div class="toggle"></div>
 
 <script>
+
+	<% @spots.each do |spot| %>
+
 	$(".toggle").btnSwitch({
 		Theme: 'Light',
+		OnCallback: function(){
+			console.log("on");
+			$.ajax({
+				url: "users/<%= user.id %>/spots/<%= spot.id %>",
+				method: "PUT",
+				data: {"spot": {"availability": true}},
+				success: function(res){$(this).append(res);}
+			});
+			$("edit" + spot_id).attr("visibility", true);
+		},
+		OffCallback: function(){
+			$.ajax({
+				url: "users/<%= user.id %>/spots/<%= spot.id %>",
+				method: "PUT",
+				data: {spot: {availability: false}}
+			}).done(function(res){
+				$(this).next().hide();
+			});
+			$("edit" + spot_id).attr("visibility", false);
+		}
 	});
+
+	<% end %>
+
 </script>
 
-<% end %>
-
-<div id="test"></div>
+<div class="test">
+</div>
 
 <script>
-	$("#test").btnSwitch({
+
+	$(".test").btnSwitch({
 		Theme: 'Light',
+		OnCallback: function(){
+			console.log("on");
+			$.ajax({
+				url: "users/<%= user.id %>/spots/1",
+				method: "PUT",
+				data: {"spot": {"availability": true}},
+				success: function(res){$(this).append(res);}
+			});
+			$("edit" + spot_id).attr("visibility", true);
+		},
+		OffCallback: function(){
+			$.ajax({
+				url: "users/<%= user.id %>/spots/1",
+				method: "PUT",
+				data: {spot: {availability: false}}
+			}).done(function(res){
+				$(this).next().hide();
+			});
+			$("edit" + spot_id).attr("visibility", false);
+		}
 	});
+
 </script>
