@@ -32,17 +32,28 @@ var findSpots = function(coordinates, currentMap) {
   });
   spotRequest.done(function(response){
     response.selections.forEach(function(location){
-      console.log(location.id)
+      var image = {
+        url: "https://cdn1.iconfinder.com/data/icons/unique-round-blue/93/location-512.png",
+        scaledSize: new google.maps.Size(40,40),
+        origin: new google.maps.Point(0,0),
+        anchor: new google.maps.Point(0,0)
+      };
       var spotOptions = {
         position: new google.maps.LatLng(location.latitude, location.longitude),
-        title: location.address,
+        icon: image,
+        label: "$" + location.price.toString(),
         animation: google.maps.Animation.DROP,
         id: location.id
       };
+      // var infowindow = new google.maps.InfoWindow({
+      //   content: location.price,
+      //   maxWidth: 200
+      // });
       var marker = new google.maps.Marker(spotOptions);
       marker.setMap(currentMap);
       marker.addListener('click', function() {
-          window.location.href = "/spots/" + marker.id;
+          // infowindow.open(currentMap, marker);
+          // window.location.href = "/spots/" + marker.id;
         });
     });
   });
