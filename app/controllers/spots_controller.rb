@@ -18,13 +18,16 @@ class SpotsController < ApplicationController
   end
 
   def update
-    @spot = Spot.find(params[:id])
-    
-    if request.xhr?
-      render :edit 
+    @spot = Spot.find(params[:id]) #define variable to edit
+
+    @spot.assign_attributes(params[:spot]) #assign new attributes
+
+    if @spot.save 
+      redirect_to spot_path
+    else
+      render 'edit'
     end
   end
-
 
 private
 
