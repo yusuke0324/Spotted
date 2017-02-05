@@ -8,68 +8,33 @@
 <div class="toggle"></div>
 
 <script>
-
-	$(".toggle").btnSwitch({
-		Theme: 'Light',
-		OnCallback: function(){
-			console.log("on");
-			$.ajax({
-				url: "users/<%= user.id %>/spots/<%= spot.id %>",
-				method: "PUT",
-				data: {"spot": {"availability": true}},
-				success: function(res){$(this).append(res);}
-			});
-			$("edit" + spot_id).attr("visibility", true);
-		},
-		OffCallback: function(){
-			$.ajax({
-				url: "users/<%= user.id %>/spots/<%= spot.id %>",
-				method: "PUT",
-				data: {spot: {availability: false}}
-			}).done(function(res){
-				$(this).next().hide();
-			});
-			$("edit" + spot_id).attr("visibility", false);
-		}
-	});
+	// $(document).load(function(){
+		
+		$(".toggle").btnSwitch({
+			Theme: 'Light',
+			OnCallback: function(){
+				console.log("on");
+				$.ajax({
+					url: "users/<%= user.id %>/spots/<%= spot.id %>",
+					method: "PUT",
+					data: {"spot": {"availability": true}},
+					success: function(res){$(this).append(res);}
+				});
+				$("edit" + spot_id).attr("visibility", true);
+			},
+			OffCallback: function(){
+				$.ajax({
+					url: "users/<%= user.id %>/spots/<%= spot.id %>",
+					method: "PUT",
+					data: {spot: {availability: false}}
+				}).done(function(res){
+					$(this).next().hide();
+				});
+				$("edit" + spot_id).attr("visibility", false);
+			}
+		});
+	// });
 
 </script>
 
 <% end %>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<div class="test">
-</div>
-
-<script>
-
-	$(".test").btnSwitch({
-		Theme: 'Light',
-		OnCallback: function(){
-			console.log("on");
-			$.ajax({
-				url: "users/<%= user.id %>/spots/1",
-				method: "PUT",
-				data: {"spot": {"availability": true}},
-				success: function(res){$(this).append(res);}
-			});
-			$("edit" + spot_id).attr("visibility", true);
-		},
-		OffCallback: function(){
-			$.ajax({
-				url: "users/<%= user.id %>/spots/1",
-				method: "PUT",
-				data: {spot: {availability: false}}
-			}).done(function(res){
-				$(this).next().hide();
-			});
-			$("edit" + spot_id).attr("visibility", false);
-		}
-	});
-
-</script>
