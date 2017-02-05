@@ -29,6 +29,6 @@ var findSpots = function(coordinates) {
         type: "GET",
         url: selection,
         dataType: "json",
-        data: {"test": "Hello", "latitude": coordinates.latitude, "longitude": coordinates.longitude}
+        data: {"latitude": coordinates.latitude, "longitude": coordinates.longitude}
     });
 }
