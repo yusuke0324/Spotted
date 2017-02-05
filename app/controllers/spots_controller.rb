@@ -32,7 +32,7 @@ class SpotsController < ApplicationController
 private
 
   def spot_params
-    params.require(:spot).permit(:address, :price, :end_time)
+    params.require(:spot).permit(:address, :price, :end_time, :picture, :picture_cache)
   end
 
 end
