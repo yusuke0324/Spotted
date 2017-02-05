@@ -50,7 +50,10 @@
                             </div>
                             <div class="tab-pane" id="step3">
                                 <h3>Upload your picture</h3>
-                                <p>This is step 3</p>
+                                <p>
+                                       <%= f.file_field :picture %>
+                                       <%= f.hidden_field :picture_cache %>
+                                </p>
                                 <ul class="list-inline pull-right">
                                     <li>
                                         <button type="button" class="btn btn-default prev-step">Previous</button>
