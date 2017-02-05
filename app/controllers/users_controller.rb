@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
 
 	def show
-		@location = Geocoder.coordinates("173.46.64.174")
-		p @location
 		@user = User.find(params[:id])
+		if request.xhr?
+			p params[:test]
+			p params[:latitude]
+			p params[:longitude]
+		end
 	end
 end
