@@ -17,6 +17,9 @@ class SpotsController < ApplicationController
     @spot = Spot.new
   end
 
+  def update
+  end
+
 private
 
   def spot_params
