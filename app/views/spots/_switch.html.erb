@@ -1,10 +1,13 @@
-<h5>My Spots</h5>
+<h4>My Spots</h4>
 
+<br>
+
+<% @spots.each do |spot| %>
+
+<h5><%= spot.address %></h5>
 <div class="toggle"></div>
 
 <script>
-
-	<% @spots.each do |spot| %>
 
 	$(".toggle").btnSwitch({
 		Theme: 'Light',
@@ -30,9 +33,15 @@
 		}
 	});
 
-	<% end %>
-
 </script>
+
+<% end %>
+
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <div class="test">
 </div>
