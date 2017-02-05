@@ -1,10 +1,81 @@
 <h1>Create Spot</h1>
 
-<%= form_for @spot do |f| %>
+<%#= form_for @spot do |f| %>
 
-  <%= f.text_field :address, placeholder: "Address" %>
-  <%= f.text_field :price, placeholder: "Price" %>
-  <%= f.text_field :end_time, placeholder: "End Time" %>
-  <%= f.submit "Create" %>
+  <%#= f.text_field :address, placeholder: "Address" %>
+  <%#= f.text_field :price, placeholder: "Price" %>
+  <%#= f.text_field :end_time, placeholder: "End Time" %>
+  <%#= f.submit "Create" %>
 
-<% end %>
+<%# end %>
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <section>
+                <div class="wizard">
+                    <div class="wizard-inner">
+                        <div class="connecting-line"></div>
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#step1" data-toggle="tab" title="Step 1"><span class="round-tab"><i class="glyphicon glyphicon-folder-open"></i></span></a></li>
+                            <li class="disabled"><a href="#step2" data-toggle="tab" title="Step 2"><span class="round-tab"><i class="glyphicon glyphicon-pencil"></i></span></a></li>
+                            <li class="disabled"><a href="#step3" data-toggle="tab" title="Step 3"><span class="round-tab"><i class="glyphicon glyphicon-picture"></i></span></a></li>
+                            <li class="disabled"><a href="#complete" data-toggle="tab" title="Complete"><span class="round-tab"><i class="glyphicon glyphicon-ok"></i></span></a></li>
+                        </ul>
+                    </div>
+                    <%= form_for @spot do |f| %>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="step1">
+                                <h3>Address</h3>
+                                <p><%= f.text_field :address, placeholder: "street, city, state,postal code", class: "address_field", required: true %></p>
+                                <ul class="list-inline pull-right">#
+                                    <li>
+                                        <button type="button" class="btn btn-primary next-step">Save and continue</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane" id="step2">
+                                <h3>Price</h3>
+                                  <p>$<%= f.text_field :price, placeholder: "Price", required: true %></p>
+                                <ul class="list-inline pull-right">
+                                    <li>
+                                        <button type="button" class="btn btn-default prev-step">Previous</button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="btn btn-primary next-step">Save and continue</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane" id="step3">
+                                <h3>Upload your picture</h3>
+                                <p>
+                                       <%= f.file_field :picture %>
+                                       <%= f.hidden_field :picture_cache %>
+                                </p>
+                                <ul class="list-inline pull-right">
+                                    <li>
+                                        <button type="button" class="btn btn-default prev-step">Previous</button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="btn btn-default next-step">Skip</button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-pane" id="complete">
+                                <h3>Complete</h3>
+                                <p>You have successfully completed all steps.</p>
+                                <%= f.submit "Create" %>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    <% end %>
+                </div>
+            </section>
+        </div>
+    </div>
+

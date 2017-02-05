@@ -1,0 +1,12 @@
+<h1>Edit Spot</h1>
+
+<%= form_tag spot_path do %>
+
+  <%= label_tag :price %>
+  <%= text_field_tag :price %>
+
+  <%= label_tag :end_time %>
+  <%= text_field_tag :end_time %>
+
+  <%= submit_tag "Sign in", class: "btn btn-large btn-primary" %>
+<% end %>

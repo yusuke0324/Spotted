@@ -1,36 +1,36 @@
 $(document).ready(function() {
-  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-  var marker = new google.maps.Marker(markerOptions);
-	marker.setMap(map);
-	
+  getLocation();
 });
 
-var mapOptions = {
-    center: new google.maps.LatLng(37.7819057,-122.4536707),
+// Function to determin user's current location using HTML5 geolocation (asynchronous)
+var getLocation = function(callback) {
+  navigator.geolocation.getCurrentPosition(function (data) {
+    var jsonLocation = {"latitude": data.coords.latitude, "longitude": data.coords.longitude};
+    var markerOptions = {
+        position: new google.maps.LatLng(data.coords.latitude, data.coords.longitude)
+    };
+    var mapOptions = {
+    center: new google.maps.LatLng(data.coords.latitude, data.coords.longitude),
     zoom: 16,
     mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    var marker = new google.maps.Marker(markerOptions);
+    marker.setMap(map);
+    findSpots(jsonLocation);
+  });
 };
 
-var markerOptions = {
-    position: new google.maps.LatLng(37.7819057,-122.4536707)
-};
-
-var options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
-
-function success(pos) {
-  var crd = pos.coords;
-  console.log (crd);
-  console.log(`${crd.latitude}`);
-  console.log(`${crd.longitude}`);
-  console.log(`${crd.accuracy}`);
-};
-
-function error(err) {
-  console.warn(`ERROR(${err.code}): ${err.message}`);
-};
-
-navigator.geolocation.getCurrentPosition(success, error, options);
+// Ajax call to server to send latitude and longitude of user's current location
+var findSpots = function(coordinates) {
+  var selection = $(location).attr("href");
+  var spotRequest = $.ajax({
+    type: "GET",
+    url: selection,
+    dataType: "json",
+    data: {"latitude": coordinates.latitude, "longitude": coordinates.longitude}
+  });
+  spotRequest.done(function(response){
+    console.log("I'm back!");
+  });
+}
