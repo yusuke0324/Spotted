@@ -6,7 +6,6 @@ $(document).ready(function() {
 var getLocation = function(callback) {
   navigator.geolocation.getCurrentPosition(function (data) {
     var jsonLocation = {"latitude": data.coords.latitude, "longitude": data.coords.longitude};
-    console.log(jsonLocation);
     var markerOptions = {
         position: new google.maps.LatLng(data.coords.latitude, data.coords.longitude)
     };
@@ -24,11 +23,14 @@ var getLocation = function(callback) {
 
 // Ajax call to server to send latitude and longitude of user's current location
 var findSpots = function(coordinates) {
-    var selection = $(location).attr("href");
-    var spotRequest = $.ajax({
-        type: "GET",
-        url: selection,
-        dataType: "json",
-        data: {"latitude": coordinates.latitude, "longitude": coordinates.longitude}
-    });
+  var selection = $(location).attr("href");
+  var spotRequest = $.ajax({
+    type: "GET",
+    url: selection,
+    dataType: "json",
+    data: {"latitude": coordinates.latitude, "longitude": coordinates.longitude}
+  });
+  spotRequest.done(function(response){
+    console.log("I'm back!");
+  });
 }
