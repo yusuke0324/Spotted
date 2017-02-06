@@ -1,5 +1,9 @@
 class SpotsController < ApplicationController
 
+  def show
+    @spot = Spot.find(params[:id])
+  end
+
   def create
     @spot = Spot.new(spot_params)
 
