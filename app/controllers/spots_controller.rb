@@ -7,8 +7,7 @@ class SpotsController < ApplicationController
   def create
     @spot = Spot.new(spot_params)
 
-    # TODO: Replace placeholder user with current user
-    @spot.owner = User.first
+    @spot.owner = current_user
 
     if @spot.save
       redirect_to root_path
