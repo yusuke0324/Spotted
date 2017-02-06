@@ -11,3 +11,5 @@
 
 <%# render partial: "spots/switch", locals: {user: @user, spots: @spots} %>
 <%= render 'owner_show' %>
+
+<%= button_to "Create New Spot", new_spot_path, method: :get %>
