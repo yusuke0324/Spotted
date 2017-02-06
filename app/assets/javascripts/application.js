@@ -14,7 +14,7 @@
 //= require jquery3
 //= require jquery-ui
 //= require jquery_ujs
-//= require jquery-3.1.1.slim.min
+//= require jquery.min
 //= require jquery.btnswitch
 //= require turbolinks
 //= require_tree .

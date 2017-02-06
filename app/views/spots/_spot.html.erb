@@ -2,6 +2,9 @@
 	<h5><%= spot.address %></h5>
 	<h5><%= spot.availability %></h5>
 	<div id="toggle<%=spot.id%>"></div>
+	<% if spot.availability %>
+		<%= render partial: 'spots/form', locals: {spot: spot} %>
+	<% end %>
 </div>
 
 <%# @spots.each do |spot| %>
@@ -9,30 +12,30 @@
 <!-- <h5><%# spot.address %></h5> -->
 <!-- <div class="toggle"></div> -->
 <script>
-		$("#toggle<%=spot.id%>").btnSwitch({
-			Theme: 'Light',
-			ToggleState: <%= spot.availability %>,
-			OnCallback: function(){
-				console.log("on");
-				$.ajax({
-					url: "/spots/<%= spot.id %>",
-					method: "PUT",
-					data: {"spot": {"availability": true}},
-					success: function(res){$(this).append(res);}
-				});
-				$("edit" + spot_id).attr("visibility", true);
-			},
-			OffCallback: function(){
-				$.ajax({
-					url: "/spots/<%= spot.id %>",
-					method: "PUT",
-					data: {"spot": {"availability": false}}
-				}).done(function(res){
-					$(this).next().hide();
-				});
-				$("edit" + spot_id).attr("visibility", false);
-			}
-		});
+	$("#toggle<%=spot.id%>").btnSwitch({
+		Theme: 'Light',
+		ToggleState: <%= spot.availability %>,
+		OnCallback: function(){
+			console.log("on");
+			$.ajax({
+				url: "/spots/<%= spot.id %>",
+				method: "PUT",
+				data: {"spot": {"availability": true}},
+				success: function(res){$(this).append(res);}
+			});
+			$("edit" + spot_id).attr("visibility", true);
+		},
+		OffCallback: function(){
+			$.ajax({
+				url: "/spots/<%= spot.id %>",
+				method: "PUT",
+				data: {"spot": {"availability": false}}
+			}).done(function(res){
+				$(this).next().hide();
+			});
+			$("edit" + spot_id).attr("visibility", false);
+		}
+	});
 	// });
 
 </script>
