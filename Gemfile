@@ -6,7 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 #time picker gem
-gem 'bootstrap-datetimepicker-rails'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.43'
 # Gon gem for accessing instance variables in JavaScript
 gem 'gon'
 # jQuery Turbolinks gem to bind and load map when linked to

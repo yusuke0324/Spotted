@@ -17,5 +17,7 @@
 //= require jquery_ujs
 //= require jquery.min
 //= require jquery.btnswitch
+//= require moment
+//= require bootstrap-datetimepicker
 //= require turbolinks
 //= require_tree .
