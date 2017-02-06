@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	def show
+		@spots = Spot.all
 		@user = User.find(params[:id])
 		# gon.test = "test"
 		if (@user.current_reservation)

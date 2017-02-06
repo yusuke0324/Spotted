@@ -1,5 +1,24 @@
-<h3>Rent a spot</h3>
-<div id="map"></div>
+<h1>Available spots</h1>
+<div id="map"></div><br>
+
+<% @spots.each do |spot| %>
+<div class="steep" style='display:inline; float:left; width: 25%; padding:5px;'>
+ <!-- <div class="row"> -->
+  <!-- <div class="col-md-4"> -->
+    <!-- <div class="thumbnail"> -->
+      <a href="/w3images/lights.jpg">
+        <img src="http://career.iresearchnet.com/wp-content/uploads/2015/05/Model-Career.jpg" alt="Lights" style="width:100%">
+        <div class="caption">
+          <p>Lorem ipsum...</p>
+          <p>Lorem ipsum...</p>
+        </div>
+      </a>
+    </div>
+  <!-- </div> -->
+ <!-- </div> -->
+<!-- </div> -->
+ <% end %>
+
 <%= button_to "End Reservation" %>
 
 <h3>Rent <i>out</i> a spot</h3>
