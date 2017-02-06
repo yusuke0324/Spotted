@@ -1,6 +1,16 @@
 class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
+		# gon.test = "test"
+		if (@user.current_reservation)
+			@reservation = @user.current_reservation
+			gon.reservation = @reservation
+			@location = @reservation.spot
+			gon.latitude = @location.latitude
+			gon.longitude = @location.longitude
+		else
+			gon.no_reservation = "none"
+		end
 		@spots = @user.owned_spots
 		if request.xhr?
 			latitude =  params[:latitude]
