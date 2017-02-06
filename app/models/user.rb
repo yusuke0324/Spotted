@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_many :spots, through: :reservations
   has_one :current_reservation, class_name: 'Reservation'
 
+  def owned_spots_ordered
+    self.owned_spots.order("created_at")
+  end
 end
