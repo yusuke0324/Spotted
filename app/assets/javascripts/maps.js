@@ -34,7 +34,7 @@ var findSpots = function(coordinates, currentMap) {
     response.selections.forEach(function(location){
       var image = {
         url: "https://cdn1.iconfinder.com/data/icons/unique-round-blue/93/location-512.png",
-        scaledSize: new google.maps.Size(40,40),
+        scaledSize: new google.maps.Size(35,35),
         origin: new google.maps.Point(0,0),
         anchor: new google.maps.Point(0,0)
       };
