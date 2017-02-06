@@ -1,0 +1,64 @@
+/*.jumbotron {
+  background: url(https://t4.ftcdn.net/jpg/01/32/55/27/240_F_132552743_D5dtCB9E3cNa1stKFIJ9qKbbgT8mewYh.jpg);
+  background-size: cover;
+  margin-bottom: 0;
+}*/
+
+#header{
+	margin: 0;
+}
+
+#jumbo {
+	margin-bottom: 0;
+}
+
+.simple-slider .swiper-slide {
+  height:500px;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+}
+
+.simple-slider .swiper-button-next, .simple-slider .swiper-button-prev #bold{
+  width:50px;
+  margin-left:20px;
+  margin-right:20px;
+}
+
+@media (max-width:767px) {
+  .simple-slider .swiper-button-next, .simple-slider .swiper-button-prev {
+    display:none;
+    text-align:center;
+    font-size: 20px;
+    margin-top: 20%;
+  }
+}
+
+@media (max-width:767px) {
+  .simple-slider .swiper-slide  #par{
+    height:360px;
+    text-align:center;
+    font-size: 20px;
+    margin-top: 20%;
+  }
+}
+
+#bold  {
+	color: white;
+	font-size: 30px;
+	margin-top: 25%;	
+	font-family: Verdana;
+}
+
+#par {
+	color: white;
+	font-size: 30px;
+	font-family: Courier New;
+
+}
+
+.swiper-slide{
+	opacity: 1;
+	text-align: center;
+
+}
