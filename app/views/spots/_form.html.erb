@@ -4,35 +4,13 @@ $<%= f.number_field :price, placeholder: "Price", in: 1.0..20.0, step: 1 %>
 <div class='input-group date datetimepicker'>
 <%= f.text_field :end_time, placeholder: "End Time", class: 'form-control' %>
 <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
+  <span class="glyphicon glyphicon-calendar"></span>
+</span>
 </div>
 <% end %>
 
-<!--   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
   <script>
-    $('.datepicker').datetimepicker({
-    format : "YYYY/MM/DD",
-    icons: {
-      previous: "fa fa-arrow-left",
-      next: "fa fa-arrow-right"
-    }
-  });
-  $('.datetimepicker').datetimepicker({
-    format : "YYYY/MM/DD HH:mm",
-    icons: {
-      time: "fa fa-clock-o",
-      date: "fa fa-calendar",
-      up: "fa fa-arrow-up",
-      down: "fa fa-arrow-down",
-      previous: "fa fa-arrow-left",
-      next: "fa fa-arrow-right"
-    }
-  });
     var data = {'data-format': 'MM/dd/yyyy hh:mm:ss PP' };
-    $('.datepicker').attr(data);
-    $('.datepicker').datetimepicker();
+    $('.datetimepicker').attr(data);
+    $('.datetimepicker').datetimepicker();
   </script>
