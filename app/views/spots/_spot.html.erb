@@ -1,21 +1,21 @@
-<h4>My Spots</h4>
+<div>
+	<h5><%= spot.address %></h5>
+	<h5><%= spot.availability %></h5>
+	<div id="toggle<%=spot.id%>"></div>
+</div>
 
-<br>
+<%# @spots.each do |spot| %>
 
-<% @spots.each do |spot| %>
-
-<h5><%= spot.address %></h5>
-<div class="toggle"></div>
-
+<!-- <h5><%# spot.address %></h5> -->
+<!-- <div class="toggle"></div> -->
 <script>
-	// $(document).load(function(){
-		
-		$(".toggle").btnSwitch({
+		$("#toggle<%=spot.id%>").btnSwitch({
 			Theme: 'Light',
+			ToggleState: <%= spot.availability %>,
 			OnCallback: function(){
 				console.log("on");
 				$.ajax({
-					url: "users/<%= user.id %>/spots/<%= spot.id %>",
+					url: "/spots/<%= spot.id %>",
 					method: "PUT",
 					data: {"spot": {"availability": true}},
 					success: function(res){$(this).append(res);}
@@ -24,9 +24,9 @@
 			},
 			OffCallback: function(){
 				$.ajax({
-					url: "users/<%= user.id %>/spots/<%= spot.id %>",
+					url: "/spots/<%= spot.id %>",
 					method: "PUT",
-					data: {spot: {availability: false}}
+					data: {"spot": {"availability": false}}
 				}).done(function(res){
 					$(this).next().hide();
 				});
@@ -37,4 +37,4 @@
 
 </script>
 
-<% end %>
+<%# end %>
