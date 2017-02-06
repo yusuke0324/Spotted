@@ -3,5 +3,4 @@
 <p>Price: <%= @spot.price %></p>
 <p>Address: <%= @spot.address %></p>
 <p>End Time: <%= @spot.end_time %></p>
-  <%= button_to 'Make a reservation', reservations_path(@spot) %>
-
+<%= button_to 'Make a reservation', spot_reservations_path(@spot) %>

@@ -6,4 +6,9 @@ class User < ApplicationRecord
   has_many :owned_spots, class_name:"Spot", foreign_key: "owner_id"
   has_many :reservations
   has_many :spots, through: :reservations
+  has_one :current_reservation, class_name: 'Reservation'
+
+  def owned_spots_ordered
+    self.owned_spots.order("created_at")
+  end
 end

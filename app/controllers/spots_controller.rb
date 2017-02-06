@@ -1,5 +1,8 @@
 class SpotsController < ApplicationController
-  # before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
+
+  def show
+    @spot = Spot.find(params[:id])
+  end
 
   def create
     @spot = Spot.new(spot_params)
@@ -18,36 +21,32 @@ class SpotsController < ApplicationController
     @spot = Spot.new
   end
 
-  def edit
-    @spot = Spot.find(params[:id])
-  end
-
-  def show
-    @spot = Spot.find(params[:id])
-  end
-
   def update
-    
+    p params
     @spot = Spot.find(params[:id]) #define variable to edit
 
-    @spot.assign_attributes(params[:spot]) #assign new attributes
-
-    if @spot.save 
-      redirect_to spot_path
+    if params[:spot][:availability]
+      @spot.assign_attributes(availability: params[:spot][:availability] == 'true') #assign new attributes
     else
-      render 'edit'
+      @spot.assign_attributes(price: params[:spot][:price], end_time: params[:spot][:end_time])
     end
-
+    p @spot
+    respond_to do |format|
+      if @spot.save
+        # redirect_to spot_path
+        format.js
+      else
+        redirect_to users_path(current_user)
+      end
+    end
   end
 
-private
+  private
+
+
 
   def spot_params
     params.require(:spot).permit(:address, :price, :end_time, :picture, :picture_cache)
   end
-
-  # def set_s3_direct_post
-  #   @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
-  # end
 
 end
