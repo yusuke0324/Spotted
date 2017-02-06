@@ -1,6 +1,9 @@
 <h3>Rent a spot</h3>
 <div id="map"></div>
-<%= button_to "End Reservation" %>
+<% if @user.current_reservation %>
+	<p>All done with your errands? Tap the button below to end your reservation!</p>
+	<%= button_to "End Reservation", spot_reservation_path(@location, @reservation), method: :patch %>
+<% end %>
 
 <h3>Rent <i>out</i> a spot</h3>
 
