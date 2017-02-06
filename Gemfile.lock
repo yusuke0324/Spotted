@@ -326,6 +326,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   byebug
   carrierwave
   coffee-rails (~> 4.2)
