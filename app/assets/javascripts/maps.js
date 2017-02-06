@@ -17,7 +17,11 @@ var getLocation = function(callback) {
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
     var marker = new google.maps.Marker(markerOptions);
     marker.setMap(map);
-    findSpots(jsonLocation, map);
+    if (gon.reservation){
+      spotDirections(jsonLocation, map);
+    } else {
+      findSpots(jsonLocation, map);
+    };
   });
 };
 
@@ -34,7 +38,7 @@ var findSpots = function(coordinates, currentMap) {
     response.selections.forEach(function(location){
       var image = {
         url: "https://cdn1.iconfinder.com/data/icons/unique-round-blue/93/location-512.png",
-        scaledSize: new google.maps.Size(40,40),
+        scaledSize: new google.maps.Size(35,35),
         origin: new google.maps.Point(0,0),
         anchor: new google.maps.Point(0,0)
       };
@@ -50,11 +54,30 @@ var findSpots = function(coordinates, currentMap) {
       //   maxWidth: 200
       // });
       var marker = new google.maps.Marker(spotOptions);
+      marker.setOptions({'opacity': 0.75});
       marker.setMap(currentMap);
       marker.addListener('click', function() {
           // infowindow.open(currentMap, marker);
-          // window.location.href = "/spots/" + marker.id;
+          window.location.href = "/spots/" + marker.id;
         });
     });
   });
+}
+
+var spotDirections = function(coordinates, currentMap) {
+   var directionsDisplay = new google.maps.DirectionsRenderer();
+    directionsDisplay.setMap(currentMap);
+    var directionsService = new google.maps.DirectionsService();
+    var start = new google.maps.LatLng(coordinates.latitude, coordinates.longitude);
+    var end = new google.maps.LatLng(gon.latitude, gon.longitude);
+    var request = {
+      origin: start,
+      destination: end,
+      travelMode: 'DRIVING'
+    };
+    directionsService.route(request, function(result, status) {
+      if (status == 'OK') {
+        directionsDisplay.setDirections(result);
+      }
+    });
 }
