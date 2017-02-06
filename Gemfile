@@ -7,6 +7,8 @@ end
 
 # Gon gem for accessing instance variables in JavaScript
 gem 'gon'
+# jQuery Turbolinks gem to bind and load map when linked to
+gem 'jquery-turbolinks'
 # jQuery UI for toggle
 gem 'jquery-ui-rails'
 
