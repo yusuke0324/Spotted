@@ -18,10 +18,15 @@ class SpotsController < ApplicationController
   end
 
   def update
+    p params
     @spot = Spot.find(params[:id]) #define variable to edit
-    p '*'*10
-    p params[:spot]
-    @spot.assign_attributes(availability: params[:spot][:availability] == 'true') #assign new attributes
+
+    if params[:spot][:availability]
+      @spot.assign_attributes(availability: params[:spot][:availability] == 'true') #assign new attributes
+    else
+      @spot.assign_attributes(price: params[:spot][:price], end_time: params[:spot][:end_time])
+    end
+    p @spot
     respond_to do |format|
       if @spot.save
         # redirect_to spot_path
@@ -32,7 +37,7 @@ class SpotsController < ApplicationController
     end
   end
 
-private
+  private
 
 
 
