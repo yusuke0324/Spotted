@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# Gon gem for accessing instance variables in JavaScript
+gem 'gon'
 # jQuery UI for toggle
 gem 'jquery-ui-rails'
 
