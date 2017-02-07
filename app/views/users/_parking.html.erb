@@ -1,0 +1,17 @@
+<% if @parking_spots.length != 0 %>
+	<% @parking_spots.each do |spot| %>
+  	<div class="col-sm-4" style="max-width:100%">
+      <a href="/spots/<%= spot.id %>">
+        <img class="steep" src="http://media.istockphoto.com/photos/empty-parking-lot-with-foliage-wall-in-the-background-picture-id475520104?k=6&m=475520104&s=170667a&w=0&h=aRlnUUYmA5IFFTPyb-kkiXAn0BB4COYq3TUkHz_Nw64=" alt="Lights" style="width:100%">
+      </a>
+    	<div class="caption">
+       <em>
+       	<p>$<%= spot.price%></p>
+       </em>
+       <em>
+	       <p><%= spot.address%></p>
+       </em>
+      </div>
+    </div>
+	<% end %>
+<% end %>

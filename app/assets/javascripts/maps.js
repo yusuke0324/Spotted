@@ -41,6 +41,7 @@ var findSpots = function(coordinates, currentMap) {
     data: {"latitude": coordinates.latitude, "longitude": coordinates.longitude}
   });
   spotRequest.done(function(response){
+    $("#parking-spots").html(response.display)
     response.selections.forEach(function(location){
       var image = {
         url: "https://cdn1.iconfinder.com/data/icons/unique-round-blue/93/location-512.png",
@@ -55,17 +56,12 @@ var findSpots = function(coordinates, currentMap) {
         animation: google.maps.Animation.DROP,
         id: location.id
       };
-      // var infowindow = new google.maps.InfoWindow({
-      //   content: location.price,
-      //   maxWidth: 200
-      // });
       var marker = new google.maps.Marker(spotOptions);
       marker.setOptions({'opacity': 0.75});
       marker.setMap(currentMap);
       marker.addListener('click', function() {
-          // infowindow.open(currentMap, marker);
-          window.location.href = "/spots/" + marker.id;
-        });
+        window.location.href = "/spots/" + marker.id;
+      });
     });
   });
 }
