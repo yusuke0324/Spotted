@@ -4,5 +4,6 @@ class WelcomeController < ApplicationController
 	end
 
 	def team
+	  @user = current_user
 	end
 end
