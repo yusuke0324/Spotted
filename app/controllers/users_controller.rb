@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 				gon.longitude = @location.longitude
 			else
 				gon.no_reservation = "none"
+
 			end
 			@spots = @user.owned_spots
 			if request.xhr?
