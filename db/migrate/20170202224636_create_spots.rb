@@ -7,7 +7,7 @@ class CreateSpots < ActiveRecord::Migration[5.0]
       t.string :picture
       t.integer :price
       t.boolean :availability, default: false
-      t.time :end_time
+      t.datetime :end_time
       t.integer :owner_id
 
       t.timestamps
