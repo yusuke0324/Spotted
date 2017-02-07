@@ -7,14 +7,20 @@
         <div class="collapse navbar-collapse" id="navcol-1">
             <ul class="nav navbar-nav navbar-right">
                 <% if current_user %>
-                    <li role="presentation" ><%= link_to current_user.first_name, user_path(@user) %></li>
-                    <li role="presentation"><%= link_to 'Home', root_path %></li>
+                    <% if current_user.owned_spots.length == 0 %>
+                        <li role="presentation"><%= link_to 'Create a spot', new_spot_path %></li>
+                    <% end %>                  
+
+                    <li role="presentation" ><%= link_to current_user.first_name, user_path(current_user) %></li>
+
                     <li role="presentation"><%= link_to 'Log out', destroy_user_session_path,method: :delete %></li>
                 <% else %>
+                    <li role="presentation"><%= link_to 'Create a spot', new_spot_path %></li>
                     <li role="presentation"><%= link_to 'Log In', new_user_session_path %></li>
                     <li role="presentation"><%= link_to 'Register', new_user_registration_path %></li>
                     
                 <% end %>
+                <li role="presentation"><%= link_to 'Home', root_path %></li>
             </ul>
         </div>
     </div>

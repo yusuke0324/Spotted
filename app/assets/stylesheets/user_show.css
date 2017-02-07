@@ -10,6 +10,28 @@ h1 {
 	font-family: Tahoma;
 }
 
+#blow {
+	margin-bottom: 200px;
+}
+
+#map{
+	margin-bottom: 40px;
+}
+
+.owner_wants_to_rent {
+	display: none;
+}
+
+#left {
+	 float: left;
+}
+
+#right {
+	 float: right;
+}
+
+.clearfix{
+    clear:both
 
 @media (max-width:200px) {
 	.steep {

@@ -1,6 +1,7 @@
 <!-- this is a show page for owner -->
-<h4>My Spots</h4>
-<br>
-<div class="spot-list">
+<h4 id="left">My Spots</h4><h4 id="right" class="btn btn-primary next-step">Rent a spot</h4>
+
+
+<div class="spot-list clearfix">
   <%= render current_user.owned_spots_ordered %>
 </div>
