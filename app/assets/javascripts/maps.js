@@ -1,6 +1,9 @@
 $(document).ready(function() {
   getLocation();
 });
+$(document).on('turbolinks:load', function(){
+  getLocation();
+});
 
 // Function to determin user's current location using HTML5 geolocation (asynchronous)
 var getLocation = function(callback) {
@@ -16,6 +19,7 @@ var getLocation = function(callback) {
     };
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
     var marker = new google.maps.Marker(markerOptions);
+    resizer(map);
     marker.setMap(map);
     if (gon.reservation){
       spotDirections(jsonLocation, map);
@@ -81,3 +85,11 @@ var spotDirections = function(coordinates, currentMap) {
       }
     });
 }
+
+var resizer = function(currentMap){
+  google.maps.event.addDomListener(window, "resize", function() {
+    var center = currentMap.getCenter();
+    google.maps.event.trigger(currentMap, "resize");
+    currentMap.setCenter(center);
+  });
+};

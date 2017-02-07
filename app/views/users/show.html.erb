@@ -1,5 +1,9 @@
 <h3>Rent a spot</h3>
-  <div id="map"></div>
+<div id="map"></div>
+<% if @user.current_reservation %>
+	<p>All done with your errands? Tap the button below to end your reservation!</p>
+	<%= button_to "End Reservation", spot_reservation_path(@location, @reservation), method: :patch %>
+<% end %>
 
 <h3>Rent <i>out</i> a spot</h3>
 
@@ -7,3 +11,5 @@
 
 <%# render partial: "spots/switch", locals: {user: @user, spots: @spots} %>
 <%= render 'owner_show' %>
+
+<%= button_to "Create New Spot", new_spot_path, method: :get %>
