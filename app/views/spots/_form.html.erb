@@ -1,8 +1,8 @@
 <%= form_for spot do |f|  %>
 
-$<%= f.number_field :price, placeholder: "Price", in: 1.0..20.0, step: 1 %>
-<div class='input-group date datetimepicker'>
-<%= f.text_field :end_time, placeholder: "End Time", class: 'form-control' %>
+$<%= f.number_field :price,class: 'price', placeholder: "Price", in: 1.0..20.0, step: 1 %>
+<div class='input-group date datetimepicker col-sm-2'>
+<%= f.datetime_local_field :end_time, placeholder: "End Time", class: 'form-control' %>
 <span class="input-group-addon">
   <span class="glyphicon glyphicon-calendar"></span>
 </span>
@@ -14,3 +14,9 @@ $<%= f.number_field :price, placeholder: "Price", in: 1.0..20.0, step: 1 %>
     $('.datetimepicker').attr(data);
     $('.datetimepicker').datetimepicker();
   </script>
+  <style type="text/css">
+    .datetimepicker{
+      display: inline;
+      float:left;
+    }
+  </style>

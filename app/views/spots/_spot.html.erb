@@ -36,9 +36,8 @@
 		}
 	});
 
-	console.log("form")
-  // $(".datepicker").datepicker()
   $(".spot<%=spot.id%>").on("change", ".edit_spot input", function(e){
+    console.log("*****************changed**********");
     var serializedArray = $(this).parent().serializeArray();
     var data ={};
     serializedArray.forEach(function(serialized){
