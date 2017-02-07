@@ -10,13 +10,26 @@ h1 {
 	font-family: Tahoma;
 }
 
+#blow {
+	margin-bottom: 200px;
+}
 
-@media (max-width:200px) {
-	.steep {
-		padding-right:100px;
-		float:left; 
-		width: 100px; 
-		padding:5px;
-		display: inline-flex;
-	}
+#map{
+	margin-bottom: 40px;
+}
+
+.owner_wants_to_rent {
+	display: none;
+}
+
+#left {
+	 float: left;
+}
+
+#right {
+	 float: right;
+}
+
+.clearfix{
+    clear:both
 }
