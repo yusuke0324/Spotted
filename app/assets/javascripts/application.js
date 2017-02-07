@@ -13,6 +13,7 @@
 
 //= require jquery3
 //= require jquery-ui
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.min
 //= require jquery.btnswitch
