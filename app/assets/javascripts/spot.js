@@ -2,6 +2,24 @@ $(document).ready(function () {
     // $( document ).on('turbolinks:load', function() {
     // console.log("test");
     //Initialize tooltips
+    navigation();
+
+    
+});
+
+$(document).on('turbolinks:load', function(){
+    navigation();
+});
+
+function nextTab(elem) {
+    // console.log("next tab called")
+    $(elem).next().find('a[data-toggle="tab"]').click();
+}
+function prevTab(elem) {
+    $(elem).prev().find('a[data-toggle="tab"]').click();
+}
+
+var navigation = function(){
     $('.nav-tabs > li a[title]').tooltip();
     
     //Wizard
@@ -27,16 +45,4 @@ $(document).ready(function () {
         prevTab($active);
 
     });
-
-    
-});
-
-function nextTab(elem) {
-    // console.log("next tab called")
-    $(elem).next().find('a[data-toggle="tab"]').click();
 }
-function prevTab(elem) {
-    $(elem).prev().find('a[data-toggle="tab"]').click();
-}
-
-
