@@ -1,6 +1,8 @@
 $(document).ready(function() {
   swit();
-  manage();
+});
+$(document).on('turbolinks:load', function(){
+  swit();
 });
 
 var swit = function(){
@@ -10,9 +12,4 @@ var swit = function(){
 		$(".owner").hide()
 
 	})
-}
-
-
-var manage = function(){
-
 }

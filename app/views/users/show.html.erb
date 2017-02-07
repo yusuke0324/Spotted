@@ -1,4 +1,5 @@
-	<% if @user.owned_spots %>
+<% if @user.owned_spots %>
+
 
 	<%# render partial: "spots/switch", locals: {user: @user, spots: @spots} %>
 		<div class="owner">
@@ -7,11 +8,11 @@
 		<div class="owner_wants_to_rent">
 			<%= render 'renters' %>
 		</div>
-	<% else %>
+<% else %>
 	<div>
 		<%= render 'renters' %>
 	</div>
-	<% end %>
+<% end %>
 
 
 <%# render partial: "spots/switch", locals: {user: @user, spots: @spots} %>
