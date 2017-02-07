@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 	def show
 		if current_user && current_user.id == params[:id].to_i
 			@user = User.find(params[:id])
-			# gon.test = "test"
 			if (@user.current_reservation)
 				@reservation = @user.current_reservation
 				gon.reservation = @reservation
@@ -16,7 +15,7 @@ class UsersController < ApplicationController
 			if request.xhr?
 				latitude =  params[:latitude]
 				longitude = params[:longitude]
-				@parking_spots = Spot.near([latitude, longitude], 0.5)
+				@parking_spots = Spot.near([latitude, longitude], 0.5).limit(4)
 				@parking_selections = []
 				@parking_spots.each {|spot| @parking_selections << {id: spot.id, address: spot.address, latitude: spot.latitude, longitude: spot.longitude, price: spot.price}}
 				respond_to do |format|

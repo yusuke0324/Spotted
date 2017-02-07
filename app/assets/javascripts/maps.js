@@ -1,6 +1,9 @@
 $(document).ready(function() {
   getLocation();
 });
+$(document).on('turbolinks:load', function(){
+  getLocation();
+});
 
 // Function to determin user's current location using HTML5 geolocation (asynchronous)
 var getLocation = function(callback) {

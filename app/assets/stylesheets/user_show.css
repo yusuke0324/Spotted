@@ -1,0 +1,44 @@
+h1 {
+	font-size: 45px;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	color:black;
+	margin-bottom: 40px;
+	color: #000;
+	text-shadow: 0 2px 3px #555555;
+	font-family: Tahoma;
+}
+
+#blow {
+	margin-bottom: 200px;
+}
+
+#map{
+	margin-bottom: 40px;
+}
+
+.owner_wants_to_rent {
+	display: none;
+}
+
+#left {
+	 float: left;
+}
+
+#right {
+	 float: right;
+}
+
+.clearfix{
+    clear:both
+
+@media (max-width:200px) {
+	.steep {
+		padding-right:100px;
+		float:left; 
+		width: 100px; 
+		padding:5px;
+		display: inline-flex;
+	}
+}

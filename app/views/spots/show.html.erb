@@ -1,5 +1,7 @@
 <h1>Spot Details</h1>
-<%= image_tag @spot.picture.url class: 'spot-picture'%>
+<% if @spot.picture.url %>
+  <%#= image_tag @spot.picture.url, class: 'spot-picture' %>
+<% end %>
 <p>Price: <%= @spot.price %></p>
 <p>Address: <%= @spot.address %></p>
 <p>End Time: <%= @spot.end_time %></p>
