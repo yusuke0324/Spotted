@@ -52,5 +52,23 @@
     })
   })
 
+  $(".spot<%=spot.id%>").on("dp.hide", ".datetimepicker", function(e){
+    console.log("*****************changed**********");
+    var serializedArray = $(this).parent().serializeArray();
+    var data ={};
+    serializedArray.forEach(function(serialized){
+      data[serialized.name] = serialized.value;
+    })
+    console.log(data);
+    $.ajax({
+      url: '/spots/<%= spot.id %>',
+      method: 'PUT',
+      data: data
+    }).done(function(res){
+    })
+  })
+
+  $(".spot<%=spot.id%> .datetimepicker input").val("<%= spot.end_time.strftime("%m/%d/%Y %l:%M %p") %>")
+
 </script>
 
