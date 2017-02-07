@@ -1,6 +1,7 @@
 <%= form_for spot do |f|  %>
 
-$<%= f.number_field :price,class: 'price', placeholder: "Price", in: 1.0..20.0, step: 1 %>
+<p><b>Price:</b> $<%= f.number_field :price,class: 'price', placeholder: "Price", in: 1.0..20.0, step: 1 %><p>
+<b>End Time Availability:</b>
 <div class='input-group date datetimepicker col-sm-2'>
 <%= f.text_field :end_time, placeholder: "End Time", class: 'form-control' %>
 <span class="input-group-addon">
