@@ -14,6 +14,10 @@ var swit = function(){
 		$(".owner").hide()
 
 	})
+
 }
 
+
+
+}
 
