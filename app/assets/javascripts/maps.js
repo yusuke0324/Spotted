@@ -22,6 +22,7 @@ var getLocation = function(callback) {
     resizer(map);
     marker.setMap(map);
     if (gon.reservation){
+      $("#right").hide()
       spotDirections(jsonLocation, map);
     } else {
       findSpots(jsonLocation, map);
@@ -69,7 +70,7 @@ var findSpots = function(coordinates, currentMap) {
 }
 
 var spotDirections = function(coordinates, currentMap) {
-   var directionsDisplay = new google.maps.DirectionsRenderer();
+  var directionsDisplay = new google.maps.DirectionsRenderer();
     directionsDisplay.setMap(currentMap);
     var directionsService = new google.maps.DirectionsService();
     var start = new google.maps.LatLng(coordinates.latitude, coordinates.longitude);

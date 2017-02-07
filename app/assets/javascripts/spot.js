@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // $( document ).on('turbolinks:load', function() {
-    console.log("test");
+    // console.log("test");
     //Initialize tooltips
     $('.nav-tabs > li a[title]').tooltip();
     
@@ -15,7 +15,7 @@ $(document).ready(function () {
     });
 
     $(".next-step").click(function (e) {
-        console.log("next step click")
+        // console.log("next step click")
         var $active = $('.wizard .nav-tabs li.active');
         $active.next().removeClass('disabled');
         nextTab($active);
@@ -32,7 +32,7 @@ $(document).ready(function () {
 });
 
 function nextTab(elem) {
-    console.log("next tab called")
+    // console.log("next tab called")
     $(elem).next().find('a[data-toggle="tab"]').click();
 }
 function prevTab(elem) {
