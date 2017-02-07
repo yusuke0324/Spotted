@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 	def show
 		if current_user && current_user.id == params[:id].to_i
 			@user = User.find(params[:id])
+			@spots = @user.owned_spots
 			if (@user.current_reservation)
 				@reservation = @user.current_reservation
 				gon.reservation = @reservation
