@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 	def show
-
 		if current_user && current_user.id == params[:id].to_i
 			@user = User.find(params[:id])
 			if (@user.current_reservation)
