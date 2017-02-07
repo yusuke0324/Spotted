@@ -35,6 +35,19 @@
 		<% else %>
 			<% @spots.each do |spot| %>
 
+	  	<div class="col-sm-4" style="max-width:100%">
+	      <a href="/w3images/lights.jpg">
+	        <img class="steep" src="<%= spot.picture %>" alt="Lights" style="width:100%">
+	      </a>
+	    	<div class="caption">
+	       <em>
+	       	<p>$<%= spot.price%></p>
+	       <em>
+	       <p><%= spot.address%></p>
+	      </div>
+	    </div>
+	 <% end %>
+	</div>
 		  	<div class="col-sm-4" style="max-width:100%">
 		      <a href="/spots/<%= spot.id %>">
 		        <img class="steep" src="http://media.istockphoto.com/photos/empty-parking-lot-with-foliage-wall-in-the-background-picture-id475520104?k=6&m=475520104&s=170667a&w=0&h=aRlnUUYmA5IFFTPyb-kkiXAn0BB4COYq3TUkHz_Nw64=" alt="Lights" style="width:100%">
@@ -54,12 +67,15 @@
 </div>
 
 
+
 <div id="owner">
 	<h2>Owners Show</h2>
 	<h4 id="left">My Spots</h4>
 
 
+
 	<div class="spot-list clearfix">
 	  <%= render current_user.owned_spots_ordered %>
 	</div>
+
 </div>
