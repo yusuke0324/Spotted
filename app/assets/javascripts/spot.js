@@ -1,6 +1,6 @@
-// $(document).ready(function () {
-    $( document ).on('turbolinks:load', function() {
-    // console.log("test");
+$(document).ready(function () {
+    // $( document ).on('turbolinks:load', function() {
+    console.log("test");
     //Initialize tooltips
     $('.nav-tabs > li a[title]').tooltip();
     
