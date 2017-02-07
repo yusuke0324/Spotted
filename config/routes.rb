@@ -13,7 +13,6 @@ Rails.application.routes.draw do
     resources :reservations
   end
   resources :users
-
   get 'welcome/index'
 
   root 'welcome#index'
