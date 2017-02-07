@@ -18,6 +18,3 @@ var swit = function(){
 }
 
 
-
-}
-

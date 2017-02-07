@@ -26,6 +26,7 @@ var getLocation = function(callback) {
     } else {
       findSpots(jsonLocation, map);
     };
+
   });
 };
 
@@ -93,3 +94,9 @@ var resizer = function(currentMap){
     currentMap.setCenter(center);
   });
 };
+
+
+
+var placeAutoComplete = function(){
+  new google.maps.places.Autocomplete($(".address_field")[0]);
+}
