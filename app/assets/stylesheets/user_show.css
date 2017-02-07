@@ -32,13 +32,8 @@ h1 {
 
 .clearfix{
     clear:both
-
-@media (max-width:200px) {
-	.steep {
-		padding-right:100px;
-		float:left; 
-		width: 100px; 
-		padding:5px;
-		display: inline-flex;
-	}
 }
+.papa{
+  padding:15px;
+}
+

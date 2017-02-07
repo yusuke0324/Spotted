@@ -33,25 +33,27 @@
 		<p>All done with your errands? Tap the button below to end your reservation!</p>
 		<%= button_to "End Reservation", spot_reservation_path(@location, @reservation), method: :patch %>
 		<% else %>
-			<% @spots.each do |spot| %>
-
-		  	<div class="col-sm-4" style="max-width:100%">
-		      <a href="/spots/<%= spot.id %>">
-		        <img class="steep" src="http://media.istockphoto.com/photos/empty-parking-lot-with-foliage-wall-in-the-background-picture-id475520104?k=6&m=475520104&s=170667a&w=0&h=aRlnUUYmA5IFFTPyb-kkiXAn0BB4COYq3TUkHz_Nw64=" alt="Lights" style="width:100%">
-		      </a>
-		    	<div class="caption">
-		       <em>
-		       	<p>$<%= spot.price%></p>
-		       </em>
-		       <em>
-			       <p><%= spot.address%></p>
-		       </em>
-		      </div>
-		    </div>
-		 <% end %>
+			<%# if @parking_spots.length != 0 %>
+				<% @spots.each do |spot| %>
+			  	<div class="col-sm-4" style="max-width:100%">
+			      <a href="/spots/<%= spot.id %>">
+			        <img class="steep" src="http://media.istockphoto.com/photos/empty-parking-lot-with-foliage-wall-in-the-background-picture-id475520104?k=6&m=475520104&s=170667a&w=0&h=aRlnUUYmA5IFFTPyb-kkiXAn0BB4COYq3TUkHz_Nw64=" alt="Lights" style="width:100%">
+			      </a>
+			    	<div class="caption">
+			       <em>
+			       	<p>$<%= spot.price%></p>
+			       </em>
+			       <em>
+				       <p><%= spot.address%></p>
+			       </em>
+			      </div>
+			    </div>
+			 <% end %>
+			<%# end %>
 		</div>
 	<% end %>
 </div>
+
 
 
 <div id="owner">
@@ -59,7 +61,9 @@
 	<h4 id="left">My Spots</h4>
 
 
+
 	<div class="spot-list clearfix">
 	  <%= render current_user.owned_spots_ordered %>
 	</div>
+
 </div>
