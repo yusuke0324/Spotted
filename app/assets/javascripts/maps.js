@@ -65,21 +65,23 @@ var findSpots = function(coordinates, currentMap) {
 }
 
 var spotDirections = function(coordinates, currentMap) {
+  var trafficLayer = new google.maps.TrafficLayer();
+  trafficLayer.setMap(currentMap);
   var directionsDisplay = new google.maps.DirectionsRenderer();
-    directionsDisplay.setMap(currentMap);
-    var directionsService = new google.maps.DirectionsService();
-    var start = new google.maps.LatLng(coordinates.latitude, coordinates.longitude);
-    var end = new google.maps.LatLng(gon.latitude, gon.longitude);
-    var request = {
-      origin: start,
-      destination: end,
-      travelMode: 'DRIVING'
-    };
-    directionsService.route(request, function(result, status) {
-      if (status == 'OK') {
-        directionsDisplay.setDirections(result);
-      }
-    });
+  directionsDisplay.setMap(currentMap);
+  var directionsService = new google.maps.DirectionsService();
+  var start = new google.maps.LatLng(coordinates.latitude, coordinates.longitude);
+  var end = new google.maps.LatLng(gon.latitude, gon.longitude);
+  var request = {
+    origin: start,
+    destination: end,
+    travelMode: 'DRIVING'
+  };
+  directionsService.route(request, function(result, status) {
+    if (status == 'OK') {
+      directionsDisplay.setDirections(result);
+    }
+  });
 }
 
 var resizer = function(currentMap){
