@@ -1,0 +1,17 @@
+<% if @parking_spots.length != 0 %>
+	<% @parking_spots.each do |spot| %>
+  	<div class="col-sm-4" style="max-width:100%">
+      <a href="/spots/<%= spot.id %>">
+        <img class="steep" src="<%= spot.picture.url %>" alt="Lights" style="width:100%">
+      </a>
+    	<div class="caption">
+       <em>
+       	<p>$<%= spot.price%>/h</p>
+       </em>
+       <em>
+	       <p><%= spot.address%></p>
+       </em>
+      </div>
+    </div>
+	<% end %>
+<% end %>

@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 20170205204222) do
   create_table "reservations", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "spot_id"
-    t.time     "start_time"
-    t.time     "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20170205204222) do
     t.string   "picture"
     t.integer  "price"
     t.boolean  "availability", default: false
-    t.time     "end_time"
+    t.datetime "end_time"
     t.integer  "owner_id"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false

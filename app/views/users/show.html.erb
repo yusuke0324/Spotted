@@ -1,10 +1,54 @@
-<h3>Rent a spot</h3>
-<div id="map"></div>
-<%= button_to "End Reservation" %>
+<!-- <h1>Available spots</h1> -->
+<!-- <div id="map"></div><br> -->
 
-<h3>Rent <i>out</i> a spot</h3>
 
-<br>
+<!-- <h3>Rent a spot</h3> -->
+<%# if @user.current_reservation %>
+	<!-- <p>All done with your errands? Tap the button below to end your reservation!</p> -->
+	<%#= button_to "End Reservation", spot_reservation_path(@location, @reservation), method: :patch %>
+<%# end %>
 
-<%# render partial: "spots/switch", locals: {user: @user, spots: @spots} %>
-<%= render 'owner_show' %>
+
+<!-- <h1>Here is the separation</h1> -->
+
+
+<%# if @user.owned_spots %>
+		<!-- <div class="owner"> -->
+			<%#= render 'owner_show' %>
+		<!-- </div> -->
+		<!-- <div class="owner_wants_to_rent"> -->
+			<%#= render 'renters' %>
+		<!-- </div> -->
+<%# else %>
+	<!-- <div> -->
+		<%#= render 'renters' %>
+	<!-- </div> -->
+<%# end %>
+<h4 id="right" class="btn btn-primary next-step">Manage Your Spots</h4>
+<div id="renter">
+	<h1>Available spots</h1>
+	<div id="map"></div>
+	<div class="container_fluid">
+	<% if @user.current_reservation %>
+		<p>All done with your errands? Tap the button below to end your reservation!</p>
+		<%= button_to "End Reservation", spot_reservation_path(@location, @reservation), method: :patch %>
+		<% else %>
+			<div id="parking-spots"></div>
+		</div>
+	<% end %>
+</div>
+
+
+
+<div id="owner">
+<h4 id="right" class="rent-spots btn btn-primary next-step">Rent Spots</h4>
+	<h2>Owners Show</h2>
+	<h4 id="left">My Spots</h4>
+
+
+
+	<div class="spot-list clearfix">
+	  <%= render current_user.owned_spots_ordered %>
+	</div>
+
+</div>

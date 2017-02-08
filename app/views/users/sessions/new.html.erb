@@ -9,7 +9,7 @@
             <%= f.password_field :password, autocomplete: "off", class:"form-control",placeholder: "password" %>
         </div>
         <div class="form-group">
-            <button class="btn btn-info btn-block" type="submit"><%= f.submit "Log in" %></button>
+            <%= f.submit "Log in",class:"btn btn-info btn-block" %>
         </div><a href="#" class="forgot"><%= render "devise/shared/links" %></a>
         <% end %>
 </div>

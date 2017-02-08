@@ -6,18 +6,19 @@ class SpotsController < ApplicationController
 
   def create
     @spot = Spot.new(spot_params)
+    @spot.end_time = DateTime.now
 
-    # TODO: Replace placeholder user with current user
-    @spot.owner = User.first
+    @spot.owner = current_user
 
     if @spot.save
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     else
       render 'new'
     end
   end
 
   def new
+    @user = current_user
     @spot = Spot.new
   end
 
@@ -28,7 +29,11 @@ class SpotsController < ApplicationController
     if params[:spot][:availability]
       @spot.assign_attributes(availability: params[:spot][:availability] == 'true') #assign new attributes
     else
-      @spot.assign_attributes(price: params[:spot][:price], end_time: params[:spot][:end_time])
+      p '*' * 10
+      p params[:spot][:end_time]
+      p '*' * 10
+      p DateTime.strptime(params[:spot][:end_time], '%m/%d/%Y %H:%M %p')
+      @spot.assign_attributes(price: params[:spot][:price], end_time: DateTime.strptime(params[:spot][:end_time], '%m/%d/%Y %H:%M %p'))
     end
     p @spot
     respond_to do |format|
