@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navcol-1">
             <ul class="nav navbar-nav navbar-right">
                 <% if current_user %>
-                    <% if current_user.owned_spots.length == 0 %>
+                    <% if current_user.owned_spots.length <= 5 %>
                         <li role="presentation"><%= link_to 'Create a spot', new_spot_path %></li>
                     <% end %>                  
 
