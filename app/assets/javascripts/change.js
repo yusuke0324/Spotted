@@ -1,7 +1,3 @@
-$(document).ready(function() {
-  swit();
-});
-
 $(document).on('turbolinks:load', function(){
   swit();
 });
@@ -16,7 +12,7 @@ var swit = function(){
 	})
 
   $("body").on("click", ".rent-spots",function(e){
-    $(this).find("#owner").hide()
+    $("#owner").hide()
     $("#renter").show()
     $("#right").show()
   })

@@ -1,7 +1,4 @@
-$(document).ready(function () {
-    // $( document ).on('turbolinks:load', function() {
-    // console.log("test");
-    //Initialize tooltips
+$(document).on('turbolinks:load', function(){
     navigation();
 
     // drag stuff
