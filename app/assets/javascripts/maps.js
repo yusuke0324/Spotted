@@ -1,6 +1,3 @@
-$(document).ready(function() {
-  getLocation();
-});
 $(document).on('turbolinks:load', function(){
   getLocation();
 });
@@ -15,7 +12,8 @@ var getLocation = function(callback) {
     var mapOptions = {
     center: new google.maps.LatLng(data.coords.latitude, data.coords.longitude),
     zoom: 16,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    scrollwheel: false
     };
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
     var marker = new google.maps.Marker(markerOptions);

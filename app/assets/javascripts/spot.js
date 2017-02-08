@@ -1,12 +1,3 @@
-$(document).ready(function () {
-    // $( document ).on('turbolinks:load', function() {
-    // console.log("test");
-    //Initialize tooltips
-    navigation();
-
-    
-});
-
 $(document).on('turbolinks:load', function(){
     navigation();
 });
@@ -33,7 +24,7 @@ var navigation = function(){
     });
 
     $(".next-step").click(function (e) {
-        // console.log("next step click")
+        console.log("next step click")
         var $active = $('.wizard .nav-tabs li.active');
         $active.next().removeClass('disabled');
         nextTab($active);

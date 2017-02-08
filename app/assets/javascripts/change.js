@@ -1,7 +1,3 @@
-$(document).ready(function() {
-  swit();
-});
-
 $(document).on('turbolinks:load', function(){
   swit();
 });
