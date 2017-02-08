@@ -12,7 +12,7 @@ var swit = function(){
 	})
 
   $("body").on("click", ".rent-spots",function(e){
-    $(this).find("#owner").hide()
+    $("#owner").hide()
     $("#renter").show()
     $("#right").show()
   })
