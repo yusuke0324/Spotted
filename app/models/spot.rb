@@ -3,6 +3,7 @@ class Spot < ApplicationRecord
   belongs_to :owner, class_name: "User"
   has_many :reservations
   has_many :users, through: :reservations
+  has_one :current_reservation, class_name: 'Reservation'
   geocoded_by :address
   after_validation :geocode
 
@@ -24,4 +25,6 @@ class Spot < ApplicationRecord
   #   @address ||= Geocoder.address(coordinates)
   #   self.address = @address
   # end
+
+
 end
