@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170205204222) do
+ActiveRecord::Schema.define(version: 20170208011248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,11 +30,13 @@ ActiveRecord::Schema.define(version: 20170205204222) do
     t.float    "longitude"
     t.string   "picture"
     t.integer  "price"
-    t.boolean  "availability", default: false
+    t.boolean  "availability",           default: false
     t.datetime "end_time"
     t.integer  "owner_id"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.integer  "current_reservation_id"
+    t.index ["current_reservation_id"], name: "index_spots_on_current_reservation_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

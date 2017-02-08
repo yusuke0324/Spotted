@@ -30,6 +30,14 @@
 	<div id="map"></div>
 	<div class="container_fluid">
 	<% if @user.current_reservation %>
+		<div class="container" id="right-image" style="float:right;width:50%;">
+	    <% if @user.current_reservation.spot.picture.url %>
+	    <img src="<%= @user.current_reservation.spot.picture.url %> " style="float: right;width: 100%;">
+	    <% end %>
+    </div>
+			<p class="papa">Price: <%= @user.current_reservation.spot.price %>/h</p>
+      <p class="papa">Address: <%= @user.current_reservation.spot.address %></p>
+      <p class="papa">End Time: <%= @user.current_reservation.spot.end_time.strftime("%m/%d/%Y %l:%M %p") %></p>
 		<p>All done with your errands? Tap the button below to end your reservation!</p>
 		<%= button_to "End Reservation", spot_reservation_path(@location, @reservation), method: :patch %>
 		<% else %>
