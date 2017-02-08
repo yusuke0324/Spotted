@@ -13,12 +13,13 @@ Rails.application.routes.draw do
     resources :reservations
   end
   resources :users
-  # resources :spots
   get 'welcome/index'
 
   root 'welcome#index'
 
   get 'users/:id' => 'users#show'
+
+  get 'welcome/team'
 
 
 end

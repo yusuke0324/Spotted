@@ -1,8 +1,36 @@
-<h1>Spot Details</h1>
-<% if @spot.picture.url %>
-  <%= image_tag @spot.picture.url, class: 'spot-picture' %>
-<% end %>
-<p>Price: <%= @spot.price %></p>
-<p>Address: <%= @spot.address %></p>
-<p>End Time: <%= @spot.end_time %></p>
-<%= button_to 'Make a reservation', spot_reservations_path(@spot) %>
+<!-- <h1>Spot Details</h1>
+<%# if @spot.picture.url %>
+  <%#= image_tag @spot.picture.url, class: 'spot-picture' %>
+<%# end %>
+<p>Price: <%#= @spot.price %></p>
+<p>Address: <%#= @spot.address %></p>
+<p>End Time: <%#= @spot.end_time %></p>
+<%#= button_to 'Make a reservation', spot_reservations_path(@spot) %> -->
+
+
+
+
+    <h1 style="text-align:center;">Spot Details</h1>
+    <div class="container" id="right-image" style="float:right;width:50%;">
+	    <% if @spot.picture.url %>
+	    <img src="<%= @spot.picture.url %> " style="float: right;width: 100%;">
+	    <% end %>
+    </div>
+    <div class="container" id="left-image" style="float:left;width:50%;text-align: center;">
+        <p class="papa">Price: <%= @spot.price %></p>
+        <p class="papa">Address: <%= @spot.address %></p>
+        <p class="papa">End Time: <%= @spot.end_time %></p>
+				<%= link_to 'Make a reservation', spot_reservations_path(@spot), method: :post %> 
+
+    </div>
+
+
+
+
+    <!-- <h1 style="text-align:center;">Heading</h1>
+    <div class="container" id="right-image" style="float:right;width:50%;"><img src="beach.jpg" /></div>
+    <div class="container" id="left-image" style="float:left;width:50%;">
+        <p class="papa">Paragraph</p>
+        <p class="papa">Paragraph</p>
+        <p class="papa">Paragraph</p>
+    </div> -->

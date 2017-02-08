@@ -1,0 +1,24 @@
+<h1>Available spots</h1>
+<div id="map"></div>
+<div class="container_fluid">
+<% if @user.current_reservation %>
+  <p>All done with your errands? Tap the button below to end your reservation!</p>
+  <%= button_to "End Reservation", spot_reservation_path(@location, @reservation), method: :patch %>
+  <% else %>
+    <% @spots.each do |spot| %>
+
+      <div class="col-sm-4" style="max-width:100%">
+        <a href="/w3images/lights.jpg">
+          <img class="steep" src="http://career.iresearchnet.com/wp-content/uploads/2015/05/Model-Career.jpg" alt="Lights" style="width:100%">
+        </a>
+        <div class="caption">
+         <em>
+          <p>$<%= spot.price%></p>
+         <em>
+         <p><%= spot.address%></p>
+        </div>
+      </div>
+   <% end %>
+  </div>
+
+<% end %>
