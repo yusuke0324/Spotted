@@ -8,6 +8,7 @@ h1 {
 	color: #000;
 	text-shadow: 0 2px 3px #555555;
 	font-family: Tahoma;
+	clear:both
 }
 
 #blow {
@@ -37,3 +38,6 @@ h1 {
   padding:15px;
 }
 
+.caption{
+	text-align: center;
+}
