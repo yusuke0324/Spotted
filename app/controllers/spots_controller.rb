@@ -6,6 +6,7 @@ class SpotsController < ApplicationController
 
   def create
     @spot = Spot.new(spot_params)
+    @spot.end_time = DateTime.now
 
     @spot.owner = current_user
 
