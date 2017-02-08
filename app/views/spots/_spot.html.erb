@@ -38,7 +38,7 @@
 
   $(".spot<%=spot.id%>").on("change", ".edit_spot input", function(e){
     console.log("*****************changed**********");
-    var serializedArray = $(this).parent().serializeArray();
+    var serializedArray = $(".spot<%=spot.id%> form").serializeArray();
     var data ={};
     serializedArray.forEach(function(serialized){
 	    data[serialized.name] = serialized.value;
@@ -54,7 +54,7 @@
 
   $(".spot<%=spot.id%>").on("dp.hide", ".datetimepicker", function(e){
     console.log("*****************changed**********");
-    var serializedArray = $(this).parent().serializeArray();
+    var serializedArray = $(".spot<%=spot.id%> form").serializeArray();
     var data ={};
     serializedArray.forEach(function(serialized){
       data[serialized.name] = serialized.value;
