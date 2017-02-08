@@ -35,10 +35,6 @@ $(document).on('turbolinks:load', function(){
   });
 });
 
-$(document).on('turbolinks:load', function(){
-    navigation();
-
-});
 
 function nextTab(elem) {
     // console.log("next tab called")
