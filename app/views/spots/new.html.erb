@@ -83,6 +83,5 @@
             </div>
         </div>
 <% else %>
-    <h4>Sign up here to create a spot</h4>
-    <%= link_to 'Sign Up', new_user_registration_path %>
+    <% controller.redirect_to new_user_registration_path %>
 <% end %>
