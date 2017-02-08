@@ -8,10 +8,7 @@ $( document ).on('turbolinks:load', function(){
     if (x.length ==0){
         return false;
     }
-    console.log(x)
-    console.log(x.length);
     for (i = 0; i < x.length; i++) {
-        console.log(x);
        x[i].style.display = "none"; 
     }
     myIndex++;
