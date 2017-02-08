@@ -5,7 +5,6 @@ $( document ).on('turbolinks:load', function(){
 	function carousel() {
     var i;
     var x = document.getElementsByClassName("swiper-slide");
-    console.log(x.length);
     for (i = 0; i < x.length; i++) {
        $(x[i]).attr("display", "none");  
     }
