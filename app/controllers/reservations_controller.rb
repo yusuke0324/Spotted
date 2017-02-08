@@ -6,6 +6,10 @@ class ReservationsController < ApplicationController
     @spot = Spot.find(params[:spot_id])
     @reservation = Reservation.create(spot: @spot, user: current_user, start_time: DateTime.now)
     current_user.current_reservation = @reservation
+    @spot.current_reservation = @reservation
+    @spot.availability = false
+    current_user.save!
+    @spot.save!
     redirect_to user_path(current_user)
   end
 
@@ -14,6 +18,16 @@ class ReservationsController < ApplicationController
     @reservation = current_user.current_reservation
     @reservation.update(end_time: DateTime.now)
     current_user.current_reservation = nil
+    @spot = @reservation.spot
+    @spot.current_reservation = nil
+    if @spot.end_time && @spot.end_time > DateTime.now
+      @spot.availability = true
+    else
+      @spot.availability = false
+    end
+    current_user.save!
+    @reservation.save!
+    @spot.save!
     redirect_to user_path(current_user)
   end
 end
