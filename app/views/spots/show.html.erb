@@ -17,9 +17,9 @@
 	    <% end %>
     </div>
     <div class="container" id="left-image" style="float:left;width:50%;text-align: center;">
-        <p class="papa">Price: <%= @spot.price %></p>
+        <p class="papa">Price: <%= @spot.price %>/h</p>
         <p class="papa">Address: <%= @spot.address %></p>
-        <p class="papa">End Time: <%= @spot.end_time %></p>
+        <p class="papa">End Time: <%= @spot.end_time.strftime("%m/%d/%Y %l:%M %p") %></p>
         <% if @spot.owner == current_user  %>
             <p style="color: red">This spot is your spot.</p>
         <% else %>
