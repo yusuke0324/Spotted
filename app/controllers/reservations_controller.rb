@@ -12,7 +12,6 @@ class ReservationsController < ApplicationController
     current_user.save!
     @spot.save!
     send_sms(@reservation)
-    p send_sms
     redirect_to user_path(current_user)
   end
 
