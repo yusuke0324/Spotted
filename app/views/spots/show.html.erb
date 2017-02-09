@@ -11,30 +11,22 @@
 
 
     <h1 style="text-align:center;">Spot Details</h1>
-    <div class="container" id="right-image" style="float:right;width:50%;">
-	    <% if @spot.picture.url %>
-	    <img src="<%= @spot.picture.url %> " style="float: right;width: 100%;">
-	    <% end %>
-    </div>
-    <div class="container" id="left-image" style="float:left;width:50%;text-align: center;">
-        <p class="papa">Price: <%= @spot.price %></p>
+    <div class="container">
+    <div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="thumbnail">
+      <img src="<%= @spot.picture.url %>">
+      <div class="caption">
+        <p class="papa">Price: <%= @spot.price %>/h</p>
         <p class="papa">Address: <%= @spot.address %></p>
-        <p class="papa">End Time: <%= @spot.end_time %></p>
+        <p class="papa">End Time: <%= @spot.end_time.strftime("%m/%d/%Y %l:%M %p") %></p>
         <% if @spot.owner == current_user  %>
             <p style="color: red">This spot is your spot.</p>
         <% else %>
             <%= link_to 'Make a reservation', spot_reservations_path(@spot), method: :post %> 
         <% end %>
-
+      </div>
     </div>
-
-
-
-
-    <!-- <h1 style="text-align:center;">Heading</h1>
-    <div class="container" id="right-image" style="float:right;width:50%;"><img src="beach.jpg" /></div>
-    <div class="container" id="left-image" style="float:left;width:50%;">
-        <p class="papa">Paragraph</p>
-        <p class="papa">Paragraph</p>
-        <p class="papa">Paragraph</p>
-    </div> -->
+  </div>
+</div>
+</div>
