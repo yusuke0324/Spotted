@@ -1,0 +1,131 @@
+.project-grid {
+  color:#313437 ;
+  background-color:#fff;
+}
+
+.project-grid p {
+  color:#7d8285 ;
+}
+
+.project-grid h2 {
+  font-weight:bold;
+  margin-bottom:40px;
+  padding-top:40px;
+  color:inherit;
+}
+
+@media (max-width:767px) {
+  .project-grid h2 {
+    margin-bottom:25px;
+    padding-top:25px;
+    font-size:24px;
+  }
+}
+
+.project-grid .text-center p {
+  margin-bottom:0;
+}
+
+.project-grid .people {
+  padding:50px 0;
+}
+
+.project-grid .box {
+  text-align:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  height:280px;
+  position:relative;
+  overflow:hidden;
+}
+
+.project-grid .item .cover {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(31,148,255,0.75);
+  transition:opacity 0.15s ease-in;
+  opacity:0;
+  padding-top:80px;
+  color:#fff;
+  text-shadow:1px 1px 1px rgba(0,0,0,0.15);
+}
+
+.project-grid .item:hover .cover {
+  opacity:1;
+}
+
+.project-grid .item .name {
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.project-grid .item .title {
+  text-transform:uppercase;
+  font-weight:bold;
+  color:#bbd8fb ;
+  letter-spacing:2px;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+.project-grid .social {
+  font-size:18px;
+}
+
+.project-grid .social a {
+  color:inherit;
+  margin:0 10px;
+  display:inline-block;
+  opacity:0.7;
+}
+
+.project-grid .social a:hover {
+  opacity:1;
+}
+
+.project-slider {
+  height:500px;
+  margin-left:8%;
+  margin-right:8%;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+}
+
+.slider-project .project-button-next, .single-item .project-button-prev #bold{
+  width:50px;
+  margin-left:20px;
+  margin-right:20px;
+}
+
+@media (max-width:50rem) {
+  .slider-project .project-button-next, .single-item .project-button-prev {
+    display:none;
+    text-align:center;
+    font-size: 20px;
+    margin-top: 20%;
+  }
+}
+
+@media (max-width:50rem) {
+  .slider-project .project-slide  {
+    height:360px;
+    text-align:center;
+    font-size: 20px;
+    margin-top: 20%;
+  }
+}
+
+.project-slide{
+  opacity: 1;
+  text-align: center;
+
+}
+
+.custom-image {
+      height: 60rem;
+    }
