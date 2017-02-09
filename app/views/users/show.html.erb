@@ -1,29 +1,3 @@
-<!-- <h1>Available spots</h1> -->
-<!-- <div id="map"></div><br> -->
-
-
-<!-- <h3>Rent a spot</h3> -->
-<%# if @user.current_reservation %>
-	<!-- <p>All done with your errands? Tap the button below to end your reservation!</p> -->
-	<%#= button_to "End Reservation", spot_reservation_path(@location, @reservation), method: :patch %>
-<%# end %>
-
-
-<!-- <h1>Here is the separation</h1> -->
-
-
-<%# if @user.owned_spots %>
-		<!-- <div class="owner"> -->
-			<%#= render 'owner_show' %>
-		<!-- </div> -->
-		<!-- <div class="owner_wants_to_rent"> -->
-			<%#= render 'renters' %>
-		<!-- </div> -->
-<%# else %>
-	<!-- <div> -->
-		<%#= render 'renters' %>
-	<!-- </div> -->
-<%# end %>
 <h4 id="right" class="btn btn-primary next-step">Manage Your Spots</h4>
 <div id="renter">
 	<h1>Available spots</h1>
