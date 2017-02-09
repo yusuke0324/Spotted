@@ -112,32 +112,12 @@
 }
 
 @media (max-width:50rem) {
-  .slider-project .project-slide  #par{
+  .slider-project .project-slide  {
     height:360px;
     text-align:center;
     font-size: 20px;
     margin-top: 20%;
   }
-}
-
-#bold  {
-  color: white;
-  margin-top: 30%;  
-  font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif;
-  font-size: 36.6071px;
-    line-height: 27.3333px;
-    text-shadow: 0px 0px 2px #000;
-    opacity: 1;
-}
-
-#par {
-  color: white;
-  font-size: 18.5476px;
-  line-height: 27.3333px;
-  font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif;
-  text-shadow: 0px 0px 2px #000;
-  opacity: 1;
-
 }
 
 .project-slide{
