@@ -1,0 +1,43 @@
+h1 {
+	font-size: 45px;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	color:black;
+	margin-bottom: 40px;
+	color: #000;
+	text-shadow: 0 2px 3px #555555;
+	font-family: Tahoma;
+	clear:both
+}
+
+#blow {
+	margin-bottom: 200px;
+}
+
+#map{
+	margin-bottom: 40px;
+}
+
+#owner {
+	display: none;
+}
+
+#left {
+	 float: left;
+}
+
+#right {
+	 float: right;
+}
+
+.clearfix{
+    clear:both
+}
+.papa{
+  padding:15px;
+}
+
+.caption{
+	text-align: center;
+}

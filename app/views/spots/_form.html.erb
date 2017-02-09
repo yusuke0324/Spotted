@@ -1,13 +1,34 @@
-<%= form_for spot, remote: true do |f|  %>
+<%= form_for spot do |f|  %>
 
-  $<%= f.number_field :price, placeholder: "Price", in: 1.0..20.0, step: 1 %>
-  <%= f.text_field :end_time, placeholder: "End Time", class: 'datepicker' %>
-  <%= f.submit "Update" %>
+<p><b>Price:</b> $<%= f.number_field :price,class: 'price', placeholder: "Price", in: 1.0..20.0, step: 1 %><p>
+<b>End Time Availability:</b>
+<div class='input-group date datetimepicker'>
+<%= f.text_field :end_time, placeholder: "End Time", class: 'form-control' %>
+<span class="input-group-addon">
+  <span class="glyphicon glyphicon-calendar"></span>
+</span>
+</div><br><br>
 <% end %>
-<!--   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
-<script>
-  $("datepicker").datepicker()
-</script>
+
+  <script>
+    var data = {'data-format': 'MM/dd/yyyy hh:mm PP' };
+    $('.datetimepicker').attr(data);
+    $('.datetimepicker').datetimepicker(
+      // change: function() {
+        // console.log("Test")
+        // $(this).change();
+      // }
+    // ).on("input change", function(){
+    //   console.log("changed date");
+    // }
+    // ).on("dp.hide", function(){
+    //   console.log("Test")
+    // }
+    );
+  </script>
+  <style type="text/css">
+    .datetimepicker{
+      display: inline;
+      float:left;
+    }
+  </style>

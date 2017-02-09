@@ -5,10 +5,17 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#time picker gem
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.43'
 # Gon gem for accessing instance variables in JavaScript
 gem 'gon'
+# jQuery Turbolinks gem to bind and load map when linked to
+gem 'jquery-turbolinks'
 # jQuery UI for toggle
 gem 'jquery-ui-rails'
+# jQuery for carousel
+gem "jquery-slick-rails"
 
 # DotEnv gem
 gem 'dotenv-rails', groups: [:development, :test]

@@ -1,16 +1,35 @@
-<div>
-	<h5><%= spot.address %></h5>
-	<h5><%= spot.availability %></h5>
-	<div id="toggle<%=spot.id%>"></div>
-	<% if spot.availability %>
-		<%= render partial: 'spots/form', locals: {spot: spot} %>
-	<% end %>
+<br>
+<div class="container">
+  
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="thumbnail">
+        <img src="<%= spot.picture.url %>" alt="...">
+        <div class="caption">
+         <div class="spot<%=spot.id%>">
+          <h5><%= spot.address %></h5>
+          <% if spot.current_reservation %>
+            <b>EndTime: </b><span><%= spot.end_time.strftime("%m/%d/%Y %l:%M %p") %></span>
+            <img src="https://rlv.zcache.com/portable_occupied_magnet-rde6bc36ed65c4b81977110bf2dc526a5_adgua_8byvr_324.jpg" class="img-responsive" alt="" style="margin:0 auto; width: 160px; height: 130px">
+          <% else %>
+            <% if spot.availability %>
+              <p>Available</p>
+            <% else %>
+              <p>Unavailable</p>
+            <% end %>
+            <div id="toggle<%=spot.id%>" style="margin:0 auto; width: 50px"></div>
+            <% if spot.availability %>
+              <%= render partial: 'spots/form', locals: {spot: spot} %>
+            <% end %>
+          <% end %>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<%# @spots.each do |spot| %>
 
-<!-- <h5><%# spot.address %></h5> -->
-<!-- <div class="toggle"></div> -->
 <script>
 	$("#toggle<%=spot.id%>").btnSwitch({
 		Theme: 'Light',
@@ -23,7 +42,6 @@
 				data: {"spot": {"availability": true}},
 				success: function(res){$(this).append(res);}
 			});
-			$("edit" + spot_id).attr("visibility", true);
 		},
 		OffCallback: function(){
 			$.ajax({
@@ -33,11 +51,42 @@
 			}).done(function(res){
 				$(this).next().hide();
 			});
-			$("edit" + spot_id).attr("visibility", false);
 		}
 	});
-	// });
+
+  $(".spot<%=spot.id%>").on("change", ".edit_spot input", function(e){
+    console.log("*****************changed**********");
+    var serializedArray = $(".spot<%=spot.id%> form").serializeArray();
+    var data ={};
+    serializedArray.forEach(function(serialized){
+	    data[serialized.name] = serialized.value;
+    })
+    console.log(data);
+    $.ajax({
+      url: '/spots/<%= spot.id %>',
+      method: 'PUT',
+      data: data
+    }).done(function(res){
+    })
+  })
+
+  $(".spot<%=spot.id%>").on("dp.hide", ".datetimepicker", function(e){
+    console.log("*****************changed**********");
+    var serializedArray = $(".spot<%=spot.id%> form").serializeArray();
+    var data ={};
+    serializedArray.forEach(function(serialized){
+      data[serialized.name] = serialized.value;
+    })
+    console.log(data);
+    $.ajax({
+      url: '/spots/<%= spot.id %>',
+      method: 'PUT',
+      data: data
+    }).done(function(res){
+    })
+  })
+
+  $(".spot<%=spot.id%> .datetimepicker input").val("<%= spot.end_time.strftime("%m/%d/%Y %l:%M %p") %>")
 
 </script>
 
-<%# end %>
