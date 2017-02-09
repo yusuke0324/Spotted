@@ -8,8 +8,8 @@
 User.destroy_all
 Spot.destroy_all
 
-user = User.create(first_name: "Jay", last_name: "Naidu", username: "jnaidu", phone: "111-111-1111", email: "jnaidu@mail.com", password: "password")
-user2 = User.create(first_name: "Bob", last_name: "Yboy", username: "bob", phone: "123-456-7890", email: "bob@mail.com", password: "password")
+user = User.create(first_name: "Jay", last_name: "Naidu", username: "jnaidu", phone: "9522886648", email: "jnaidu@mail.com", password: "password")
+user2 = User.create(first_name: "Bob", last_name: "Yboy", username: "bob", phone: "8083428500", email: "bob@mail.com", password: "password")
 
 Spot.create(address: "61 Oak Grove St, San Francisco, CA", picture: open("parkingspot.jpg"), price: 10, end_time: "10:00", owner: user)
 Spot.create(address: "970 Howard St, San Francisco, CA", picture: open("parkingspot.jpg"), price: 10, end_time: "9:00", owner: user)

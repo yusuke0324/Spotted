@@ -21,5 +21,6 @@ Rails.application.routes.draw do
 
   get 'welcome/team'
 
+  get 'welcome/project'
 
 end

@@ -14,6 +14,8 @@ gem 'gon'
 gem 'jquery-turbolinks'
 # jQuery UI for toggle
 gem 'jquery-ui-rails'
+# jQuery for carousel
+gem "jquery-slick-rails"
 
 # DotEnv gem
 gem 'dotenv-rails', groups: [:development, :test]
@@ -34,6 +36,8 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+#sms
+gem 'twilio-ruby', '~> 4.11.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

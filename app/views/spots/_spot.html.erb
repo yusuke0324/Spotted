@@ -1,20 +1,33 @@
-<div class="spot<%=spot.id%>">
-	<h5><%= spot.address %></h5>
-  <% if spot.current_reservation %>
-    <b>EndTime: </b><span><%= spot.end_time.strftime("%m/%d/%Y %l:%M %p") %></span>
-    <img src="https://rlv.zcache.com/portable_occupied_magnet-rde6bc36ed65c4b81977110bf2dc526a5_adgua_8byvr_324.jpg" class="img-responsive" alt="" style="width: 160px; height: 130px">
-  <% else %>
-  	<% if spot.availability %>
-  		<p>Available</p>
-  	<% else %>
-  		<p>Unavailable</p>
-  	<% end %>
-  	<div id="toggle<%=spot.id%>"></div>
-  	<% if spot.availability %>
-  		<%= render partial: 'spots/form', locals: {spot: spot} %>
-  	<% end %>
-  <% end %>
-</div><br>
+<br>
+<div class="container">
+  
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="thumbnail">
+        <img src="<%= spot.picture.url %>" alt="...">
+        <div class="caption">
+         <div class="spot<%=spot.id%>">
+          <h5><%= spot.address %></h5>
+          <% if spot.current_reservation %>
+            <b>EndTime: </b><span><%= spot.end_time.strftime("%m/%d/%Y %l:%M %p") %></span>
+            <img src="https://rlv.zcache.com/portable_occupied_magnet-rde6bc36ed65c4b81977110bf2dc526a5_adgua_8byvr_324.jpg" class="img-responsive" alt="" style="margin:0 auto; width: 160px; height: 130px">
+          <% else %>
+            <% if spot.availability %>
+              <p>Available</p>
+            <% else %>
+              <p>Unavailable</p>
+            <% end %>
+            <div id="toggle<%=spot.id%>" style="margin:0 auto; width: 50px"></div>
+            <% if spot.availability %>
+              <%= render partial: 'spots/form', locals: {spot: spot} %>
+            <% end %>
+          <% end %>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <script>
