@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+  include ApplicationHelper
 
   def create
     # only if user don't have any reservation, user can make new one.
@@ -10,6 +11,7 @@ class ReservationsController < ApplicationController
     @spot.availability = false
     current_user.save!
     @spot.save!
+    send_sms(@reservation)
     redirect_to user_path(current_user)
   end
 
