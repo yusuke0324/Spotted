@@ -20,7 +20,11 @@
         <p class="papa">Price: <%= @spot.price %></p>
         <p class="papa">Address: <%= @spot.address %></p>
         <p class="papa">End Time: <%= @spot.end_time %></p>
-				<%= link_to 'Make a reservation', spot_reservations_path(@spot), method: :post %> 
+        <% if @spot.owner == current_user  %>
+            <p style="color: red">This spot is your spot.</p>
+        <% else %>
+            <%= link_to 'Make a reservation', spot_reservations_path(@spot), method: :post %> 
+        <% end %>
 
     </div>
 
