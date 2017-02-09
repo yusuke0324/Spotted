@@ -1,17 +1,32 @@
-var slideIndex = 1;
-showDivs(slideIndex);
+$(document).on('turbolinks:load', function() {
+	$('.single-item').slick({});
+})
+// $(document).on('turbolinks:before-cache', $('.single-item').slick('unslick'))
+// $('.single-item').slick();
 
-function plusDivs(n) {
-    showDivs(slideIndex += n);
-}
+// $(function(){
 
-function showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    if (n > x.length) {slideIndex = 1} 
-    if (n < 1) {slideIndex = x.length} ;
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none"; 
-    }
-    x[slideIndex-1].style.display = "block"; 
-}
+//    // Initializing the swiper plugin for the slider.
+//     // Read more here: http://idangero.us/swiper/api/
+//     var mySwiper = new Swiper ('.swiper-container', {
+//         loop: true,
+//         pagination: '.swiper-pagination',
+//         paginationClickable: true,
+//         nextButton: '.swiper-button-next',
+//         prevButton: '.swiper-button-prev'
+//     });
+    
+//     mySwiper.stopAutoplay();
+
+// });
+
+// $(document).ready(function () {
+//   //initialize swiper when document ready  
+//     var mySwiper = new Swiper ('.swiper-container', {
+//         loop: true,
+//         pagination: '.swiper-pagination',
+//         paginationClickable: true,
+//         nextButton: '.swiper-button-next',
+//         prevButton: '.swiper-button-prev'
+//     });     
+// });

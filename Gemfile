@@ -14,6 +14,8 @@ gem 'gon'
 gem 'jquery-turbolinks'
 # jQuery UI for toggle
 gem 'jquery-ui-rails'
+# jQuery for carousel
+gem "jquery-slick-rails"
 
 # DotEnv gem
 gem 'dotenv-rails', groups: [:development, :test]
