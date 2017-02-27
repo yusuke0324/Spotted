@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Spotted][] is a platform renting out private parking spots to users; like airbnb for private parking spots.
+This application is a proof of concept and working progress so it not actually available.
 
-Things you may want to cover:
+[Spotted]: https://spottedparking.herokuapp.com/ "Spotted"
 
-* Ruby version
 
-* System dependencies
+Using this application, users can...
+* rent out private parking spots
+* and make maney!
+* rent a neaby parking spot
+* and no more be late!
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This application is using the following tech stack;
+* Ruby on Rails
+* Javascript
+* HTML, CSS
+* Google MAP API
+* Twilio
+* Heroku
