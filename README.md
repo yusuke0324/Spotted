@@ -1,6 +1,6 @@
 # README
 
-[Spotted][] is a platform for renting out private parking spots, or simply an "Airbnb for parking spots" app.
+[Spotted][] is a platform for renting out private parking spots, or simply put, an "Airbnb for parking spots" app.
 This application is a proof of concept and currently a work in progress.
 
 [Spotted]: https://spottedparking.herokuapp.com/ "Spotted"
