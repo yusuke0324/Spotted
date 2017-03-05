@@ -14,6 +14,6 @@ This application is using the following tech stack:
 * Ruby on Rails
 * Javascript
 * HTML/CSS
-* Google MAP API
+* Google Maps JavaScript API
 * Twilio
 * Heroku
