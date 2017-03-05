@@ -337,6 +337,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   bootstrap3-datetimepicker-rails (~> 4.17.43)
   byebug
   carrierwave
