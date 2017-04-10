@@ -8,15 +8,21 @@ This application is a proof of concept and currently a work in progress.
 
 Using this application, users can...
 * Put up private parking spots for rent
-* Rent out a neaby parking spot
+* Rent a nearby parking spot
 
 ## Put up parking spot for rent
 
-![alt tag](https://github.com/u-sky/Spotted/blob/master/rent-out-1.png)
+![alt tag](https://github.com/u-sky/Spotted/blob/master/rent-spot-1.png)
 
-![alt tag](https://github.com/u-sky/Spotted/blob/master/rent-out-2.png)
+![alt tag](https://github.com/u-sky/Spotted/blob/master/rent-spot-2.png)
 
-![alt tag](https://github.com/u-sky/Spotted/blob/master/rent-out-3.png)
+![alt tag](https://github.com/u-sky/Spotted/blob/master/rent-spot-3.png)
+
+
+## Rent a parking spot
+
+![alt tag](https://github.com/u-sky/Spotted/blob/master/reserve-spot-1.jpg)
+
 
 
 This application is using the following tech stack:
