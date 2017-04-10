@@ -7,8 +7,17 @@ This application is a proof of concept and currently a work in progress.
 
 
 Using this application, users can...
-* Rent out private parking spots (and make money in the process!)
-* Rent out a neaby parking spot to save time
+* Put up private parking spots for rent
+* Rent out a neaby parking spot
+
+## Put up parking spot for rent
+
+![alt tag](https://github.com/u-sky/Spotted/blob/master/rent-out-1.png)
+
+![alt tag](https://github.com/u-sky/Spotted/blob/master/rent-out-2.png)
+
+![alt tag](https://github.com/u-sky/Spotted/blob/master/rent-out-3.png)
+
 
 This application is using the following tech stack:
 * Ruby on Rails
