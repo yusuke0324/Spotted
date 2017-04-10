@@ -21,8 +21,9 @@ Using this application, users can...
 
 ## Rent a parking spot
 
-![alt tag](https://github.com/u-sky/Spotted/blob/master/reserve-spot-1.jpg)
+![alt tag](https://github.com/u-sky/Spotted/blob/master/reserve-spot.jpg)
 
+![alt tag](https://github.com/u-sky/Spotted/blob/master/reserve-spot-2.jpg)
 
 
 This application is using the following tech stack:
