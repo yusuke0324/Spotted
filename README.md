@@ -12,7 +12,7 @@ Using this application, users can...
 
 # Put up parking spot for rent
 
-![alt tag](https://github.com/u-sky/Spotted/blob/master/rent-out-spot-1.png)
+![alt tag](https://github.com/u-sky/Spotted/blob/master/rent-out-spot.png)
 
 
 # Find open parking spots nearby
@@ -24,6 +24,7 @@ Using this application, users can...
 
 ![alt tag](https://github.com/u-sky/Spotted/blob/master/reserve-spot.jpg)
 
+![alt tag](https://github.com/u-sky/Spotted/blob/master/reserve-spot-2.jpg)
 
 
 This application is using the following tech stack:
