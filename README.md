@@ -27,9 +27,10 @@ Using this application, users can...
 ![alt tag](https://github.com/u-sky/Spotted/blob/master/reserve-spot-2.jpg)
 
 
-This application is using the following tech stack:
-* Ruby on Rails
+## Tech stack:
+* Ruby/Rails
 * Javascript
+* jQuery
 * HTML/CSS
 * Google Maps JavaScript API
 * Twilio
